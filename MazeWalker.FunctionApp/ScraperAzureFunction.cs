@@ -15,10 +15,10 @@ namespace MazeWalker.FunctionApp
         }
         
         [FunctionName("ScrapeOnSchedule")]
-        public async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer)
+        public async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, CancellationToken cancellationToken)
         {
             // log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            await _scraper.ContinueScraping(CancellationToken.None);
+            await _scraper.ContinueScraping(cancellationToken);
         }
     }
 }

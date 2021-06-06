@@ -6,6 +6,10 @@
             "samplingSettings": {
                 "isEnabled": true
             }
+        },
+        "fileLoggingMode": "always",
+        "logLevel": {
+            "MazeWalker": "Information"
         }
     }
 }
