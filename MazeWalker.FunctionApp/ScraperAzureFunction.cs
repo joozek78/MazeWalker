@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MazeWalker.Core.Scraping;
@@ -7,9 +8,9 @@ namespace MazeWalker.FunctionApp
 {
     public class ScraperAzureFunction
     {
-        private readonly IScraper _scraper;
+        private readonly Scraper _scraper;
 
-        public ScraperAzureFunction(IScraper scraper)
+        public ScraperAzureFunction(Scraper scraper)
         {
             _scraper = scraper;
         }
@@ -17,7 +18,6 @@ namespace MazeWalker.FunctionApp
         [FunctionName("ScrapeOnSchedule")]
         public async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, CancellationToken cancellationToken)
         {
-            // log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
             await _scraper.ContinueScraping(cancellationToken);
         }
     }

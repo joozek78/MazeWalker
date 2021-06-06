@@ -25,12 +25,10 @@ namespace MazeWalker.Adapters.Cosmos
                 .FirstOrDefault();
             if (response == null)
             {
-                return null;
+                return new ScraperState();
             }
-            return new ScraperState()
-            {
-                CurrentPageNumber = response.CurrentPageNumber
-            };
+
+            return new ScraperState(response.CurrentPageNumber);
         }
 
         public async Task Write(ScraperState scraperState)

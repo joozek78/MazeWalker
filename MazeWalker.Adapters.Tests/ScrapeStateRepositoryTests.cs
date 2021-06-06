@@ -34,10 +34,7 @@ namespace MazeWalker.Adapters.Tests
         [Test]
         public async Task ShouldPersistStateAndReturnIt()
         {
-            var scraperState = new ScraperState()
-            {
-                CurrentPageNumber = 2
-            };
+            var scraperState = new ScraperState(2);
 
             await _scrapeStateRepository.Write(scraperState);
             var readBack = await _scrapeStateRepository.Read();
@@ -46,10 +43,10 @@ namespace MazeWalker.Adapters.Tests
         }
         
         [Test]
-        public async Task ShouldReturnNullWhenNoStateHasBeenPreviouslyStored()
+        public async Task ShouldReturnNewStateWhenNoStateHasBeenPreviouslyStored()
         {
             var result = await _scrapeStateRepository.Read();
-            result.Should().BeNull();
+            result.CurrentPageNumber.Should().Be(0);
         }
 
         [OneTimeTearDown]
