@@ -42,7 +42,7 @@ namespace MazeWalker.Adapters.Cosmos
         {
             var shows = await CosmosContainers.EnsureShows(_database);
             var (minExclusive, maxInclusive) = CosmosShowPages.GetIndexBoundsForPage(page);
-            // throw new Exception();
+            
             return shows.GetItemLinqQueryable<CosmosShow>(true)
                 .Where(show => show.IdNumber > minExclusive && show.IdNumber <= maxInclusive)
                 .AsEnumerable()

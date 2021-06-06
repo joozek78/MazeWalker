@@ -4,6 +4,7 @@ using Azure.Identity;
 using MazeWalker.Adapters.Cosmos;
 using MazeWalker.Adapters.TvMazeApi;
 using MazeWalker.Core;
+using MazeWalker.Core.MazeWalkerApi;
 using MazeWalker.Core.ScraperState;
 using MazeWalker.Core.Scraping;
 using MazeWalker.Core.TvMazeApi;
@@ -27,7 +28,9 @@ namespace MazeWalker.FunctionApp
         {
             builder.Services.AddHttpClient();
             builder.Services
-                .AddTransient<IScraper, Scraper>()
+                .AddTransient<Scraper>()
+                .AddTransient<IPageScraper, PageScraper>()
+                .AddTransient<GetShowsRequestHandler>()
                 .AddTransient<IScraperStateRepository, ScrapeStateRepository>()
                 .AddTransient<IShowInfoRepository, ShowInfoRepository>();
             builder.Services
