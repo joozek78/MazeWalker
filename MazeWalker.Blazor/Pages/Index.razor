@@ -6,8 +6,10 @@
 <h1>Top funda agents</h1>
 
 <p>Check out top funda agents. Put your own search term or try those examples:</p>
-<a href="#" @onclick="@(() => _searchTerm="/amsterdam")">/amsterdam/</a>
-<a href="#" @onclick="@(() => _searchTerm="/amsterdam/tuin")">/amsterdam/tuin</a>
+<p>
+    <a href="#" @onclick="@(() => _searchTerm="/amsterdam")">/amsterdam/</a>
+    <a href="#" @onclick="@(() => _searchTerm="/amsterdam/tuin")">/amsterdam/tuin</a>
+</p>
 <input @bind="@_searchTerm">
 <button class="btn btn-primary" @onclick="Search">Search</button>
 @if (_isLoading)
@@ -50,6 +52,10 @@ else if(_response != null)
 
     private async Task Search()
     {
+        if (_isLoading)
+        {
+            Cancel();
+        }
         _isLoading = true;
         _response = null;
         _cancellation = new CancellationTokenSource();

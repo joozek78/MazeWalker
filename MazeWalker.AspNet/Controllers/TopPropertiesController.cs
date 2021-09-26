@@ -24,6 +24,7 @@ namespace MazeWalker.AspNet.Controllers
         }
 
         [HttpGet]
+        [ResponseCache(Duration = 60*5)]
         public async Task<ApiTopPropertiesResponse> Get([FromQuery] string searchTerm,
             [FromQuery] int limit = 10,
             CancellationToken cancellationToken = default)
