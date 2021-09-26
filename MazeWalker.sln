@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.FunctionApp", "MazeWalker.FunctionApp\MazeWalker.FunctionApp.csproj", "{515EC704-194A-4F65-B9BD-4131F631763C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.Core", "MazeWalker.Core\MazeWalker.Core.csproj", "{0744E9BE-2911-4F18-9660-5F11B8C5EF86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.Adapters", "MazeWalker.Adapters\MazeWalker.Adapters.csproj", "{97848376-9C6D-453A-9467-C0115A595BEB}"
@@ -10,16 +8,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.Core.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.Adapters.Tests", "MazeWalker.Adapters.Tests\MazeWalker.Adapters.Tests.csproj", "{AC342A91-379C-456D-9BCE-4F54C6D8F793}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.SpecTests", "MazeWalker.SpecTests\MazeWalker.SpecTests.csproj", "{B5228A81-1D03-4A7E-8D13-77132FD954CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.AspNet", "MazeWalker.AspNet\MazeWalker.AspNet.csproj", "{5745528D-97A6-4117-87A6-7D0EE8002CDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{515EC704-194A-4F65-B9BD-4131F631763C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{515EC704-194A-4F65-B9BD-4131F631763C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{515EC704-194A-4F65-B9BD-4131F631763C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{515EC704-194A-4F65-B9BD-4131F631763C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0744E9BE-2911-4F18-9660-5F11B8C5EF86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0744E9BE-2911-4F18-9660-5F11B8C5EF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0744E9BE-2911-4F18-9660-5F11B8C5EF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,5 +34,13 @@ Global
 		{AC342A91-379C-456D-9BCE-4F54C6D8F793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC342A91-379C-456D-9BCE-4F54C6D8F793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC342A91-379C-456D-9BCE-4F54C6D8F793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5228A81-1D03-4A7E-8D13-77132FD954CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5228A81-1D03-4A7E-8D13-77132FD954CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5228A81-1D03-4A7E-8D13-77132FD954CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5228A81-1D03-4A7E-8D13-77132FD954CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

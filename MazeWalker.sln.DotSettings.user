@@ -1,0 +1,19 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2bbe1adb_002D5866_002D47b6_002Da65b_002D43090f7a4be5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddTwoNumbers" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Test&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::B5228A81-1D03-4A7E-8D13-77132FD954CC::net5.0::MazeWalker.SpecTests.TopPropertiesFeature.AddTwoNumbers&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::B5228A81-1D03-4A7E-8D13-77132FD954CC::net5.0::MazeWalker.SpecTests.TopPropertiesFeature&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::B5228A81-1D03-4A7E-8D13-77132FD954CC::net5.0::MazeWalker_SpecTests_NUnitAssemblyHooks&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::AC342A91-379C-456D-9BCE-4F54C6D8F793::.NETCoreApp,Version=v3.1::MazeWalker.Adapters.Tests.FundaApiClientTests.ShouldReturnWellFormedResult&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::AC342A91-379C-456D-9BCE-4F54C6D8F793::.NETCoreApp,Version=v3.1::MazeWalker.Adapters.Tests.FundaApiClientTests&lt;/TestId&gt;&#xD;
+    &lt;/Test&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::AC342A91-379C-456D-9BCE-4F54C6D8F793::.NETCoreApp,Version=v3.1::MazeWalker.Adapters.Tests.FundaApiClientTests.ShouldReturnWellFormedResult&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::AC342A91-379C-456D-9BCE-4F54C6D8F793::.NETCoreApp,Version=v3.1::MazeWalker.Adapters.Tests.FundaApiClientTests.test&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::B5228A81-1D03-4A7E-8D13-77132FD954CC::net5.0::MazeWalker.SpecTests.HandlingPagesFeature&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::B5228A81-1D03-4A7E-8D13-77132FD954CC::net5.0::MazeWalker.SpecTests.TopPropertiesFeature&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::AC342A91-379C-456D-9BCE-4F54C6D8F793::net5.0::MazeWalker.Adapters.Tests.FundaApiClientTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
