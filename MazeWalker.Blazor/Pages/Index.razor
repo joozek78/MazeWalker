@@ -1,0 +1,69 @@
+﻿@page "/"
+@using MazeWalker.Contract
+@using System.Threading
+@inject HttpClient Http
+
+<h1>Top funda agents</h1>
+
+<p>Check out top funda agents. Put your own search term or try those examples:</p>
+<a href="#" @onclick="@(() => _searchTerm="/amsterdam")">/amsterdam/</a>
+<a href="#" @onclick="@(() => _searchTerm="/amsterdam/tuin")">/amsterdam/tuin</a>
+<input @bind="@_searchTerm">
+<button class="btn btn-primary" @onclick="Search">Search</button>
+@if (_isLoading)
+{
+    <p>
+        <em>Loading...</em>(<a href="#" @onclick="Cancel">cancel</a>)
+    </p>
+}
+else if(_response != null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Agent name</th>
+            <th>Number of properties listed</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var agent in _response.AgentsResults)
+        {
+            <tr>
+                <td>@agent.Name</td>
+                <td>@agent.TotalProperties</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private string _searchTerm = "/amsterdam";
+    private ApiTopPropertiesResponse _response;
+    private bool _isLoading = false;
+    private CancellationTokenSource _cancellation;
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+
+    private async Task Search()
+    {
+        _isLoading = true;
+        _response = null;
+        _cancellation = new CancellationTokenSource();
+        
+        _response = await Http.GetFromJsonAsync<ApiTopPropertiesResponse>(
+            $"/topProperties?searchTerm={_searchTerm}",
+            _cancellation.Token);
+        _isLoading = false;
+    }
+
+    private void Cancel()
+    {
+        _cancellation.Cancel();
+        _isLoading = false;
+    }
+
+}

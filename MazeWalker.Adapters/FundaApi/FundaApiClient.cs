@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using MazeWalker.Adapters.FundaApi.Models;
 using MazeWalker.Core.Domain;
@@ -19,16 +20,17 @@ namespace MazeWalker.Adapters.FundaApi
             _httpClient = httpClient;
         }
 
-        public async Task<PropertiesPage> SearchProperties(string searchTerm, int pageBase1)
+        public async Task<PropertiesPage> SearchProperties(string searchTerm, int pageBase1,
+            CancellationToken cancellationToken)
         {
             if (pageBase1 < 1)
             {
                 throw new ArgumentException($"{nameof(pageBase1)} can't be lower than 1");
             }
 
-            var responseMessage = await _httpClient.GetAsync(FundaApiUris.Search(pageBase1, searchTerm));
+            var responseMessage = await _httpClient.GetAsync(FundaApiUris.Search(pageBase1, searchTerm), cancellationToken);
             responseMessage.EnsureSuccessStatusCode();
-            var asString = await responseMessage.Content.ReadAsStringAsync();
+            var asString = await responseMessage.Content.ReadAsStringAsync(cancellationToken);
             var searchResult = JsonConvert.DeserializeObject<FundaApiSearchResult>(asString);
             return new PropertiesPage(MapToDomain(searchResult.Properties), searchResult.ResultsCount);
         }

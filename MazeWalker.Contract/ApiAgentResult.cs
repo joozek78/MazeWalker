@@ -1,4 +1,4 @@
-namespace MazeWalker.Core
+namespace MazeWalker.Contract
 {
     public class ApiAgentResult
     {

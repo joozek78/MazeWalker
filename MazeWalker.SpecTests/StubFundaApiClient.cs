@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using MazeWalker.Core.Domain;
 using MazeWalker.Core.FundaApi;
@@ -11,7 +12,8 @@ namespace MazeWalker.SpecTests
     {
         private const int MaxPageNumber = 10;
         private IReadOnlyCollection<Property>[] _pages = new IReadOnlyCollection<Property>[MaxPageNumber];
-        public Task<PropertiesPage> SearchProperties(string searchTerm, int pageBase1)
+        public Task<PropertiesPage> SearchProperties(string searchTerm, int pageBase1,
+            CancellationToken cancellationToken)
         {
             if (pageBase1 > _pages.Length)
             {

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using MazeWalker.Contract;
 using MazeWalker.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -22,9 +24,11 @@ namespace MazeWalker.AspNet.Controllers
         }
 
         [HttpGet]
-        public async Task<ApiTopPropertiesResponse> Get([FromQuery] string searchTerm, [FromQuery] int limit = 10)
+        public async Task<ApiTopPropertiesResponse> Get([FromQuery] string searchTerm,
+            [FromQuery] int limit = 10,
+            CancellationToken cancellationToken = default)
         {
-            return await _handler.Handle(searchTerm, limit);
+            return await _handler.Handle(searchTerm, limit, cancellationToken);
         }
     }
 }

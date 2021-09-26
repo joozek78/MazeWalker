@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.SpecTests", "Maz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.AspNet", "MazeWalker.AspNet\MazeWalker.AspNet.csproj", "{5745528D-97A6-4117-87A6-7D0EE8002CDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.Blazor", "MazeWalker.Blazor\MazeWalker.Blazor.csproj", "{074312D4-CDF2-47E7-ADC2-E1D3267E7743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeWalker.Contract", "MazeWalker.Contract\MazeWalker.Contract.csproj", "{7704D86D-E005-4146-B71F-0FD8331532BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5745528D-97A6-4117-87A6-7D0EE8002CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074312D4-CDF2-47E7-ADC2-E1D3267E7743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074312D4-CDF2-47E7-ADC2-E1D3267E7743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074312D4-CDF2-47E7-ADC2-E1D3267E7743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074312D4-CDF2-47E7-ADC2-E1D3267E7743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7704D86D-E005-4146-B71F-0FD8331532BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7704D86D-E005-4146-B71F-0FD8331532BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7704D86D-E005-4146-B71F-0FD8331532BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7704D86D-E005-4146-B71F-0FD8331532BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

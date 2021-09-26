@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MazeWalker.Core
+namespace MazeWalker.Contract
 {
     public class ApiTopPropertiesResponse
     {

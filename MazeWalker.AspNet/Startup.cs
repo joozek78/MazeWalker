@@ -51,6 +51,7 @@ namespace MazeWalker.AspNet
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MazeWalker.AspNet v1"));
+                app.UseWebAssemblyDebugging();
             }
 
             app.UseHttpsRedirection();
@@ -58,8 +59,14 @@ namespace MazeWalker.AspNet
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            app.UseBlazorFrameworkFiles();
+            app.UseStaticFiles();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
+            });
         }
     }
 }

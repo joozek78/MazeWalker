@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
+using MazeWalker.Contract;
 using MazeWalker.Core;
 using TechTalk.SpecFlow;
 

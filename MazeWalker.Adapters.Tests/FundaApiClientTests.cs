@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using MazeWalker.Adapters.FundaApi;
@@ -25,7 +26,7 @@ namespace MazeWalker.Adapters.Tests
          [Test]
          public async Task ShouldReturnWellFormedResult()
          {
-             var response = await _fundaApiClient.SearchProperties("", 1);
+             var response = await _fundaApiClient.SearchProperties("", 1, CancellationToken.None);
              
              // domain objects are responsible for validating the conversion from raw values
              // if deserialization fails or produces null values an exception will be thrown above
