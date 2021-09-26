@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using MazeWalker.Contract;
 using MazeWalker.Core;
+using MazeWalker.Core.FundaApi;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -25,11 +27,18 @@ namespace MazeWalker.AspNet.Controllers
 
         [HttpGet]
         [ResponseCache(Duration = 60*5)]
-        public async Task<ApiTopPropertiesResponse> Get([FromQuery] string searchTerm,
+        public async Task<IActionResult> Get([FromQuery] string searchTerm,
             [FromQuery] int limit = 10,
             CancellationToken cancellationToken = default)
         {
-            return await _handler.Handle(searchTerm, limit, cancellationToken);
+            try
+            {
+                return Ok(await _handler.Handle(searchTerm, limit, cancellationToken));
+            }
+            catch (FundaUnavailableException)
+            {
+                return StatusCode((int) HttpStatusCode.ServiceUnavailable);
+            }
         }
     }
 }
